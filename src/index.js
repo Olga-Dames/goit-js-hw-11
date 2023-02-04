@@ -11,7 +11,7 @@ import PicsApiService from './js/pixabay-service';
 
 const PicsApi = new PicsApiService();
 let picture = null;
-let shownImages = 0;
+let shownPics = 0;
 
 refs.form.addEventListener('submit', onSubmitSearch);
 
@@ -38,10 +38,11 @@ async function onSubmitSearch(e) {
     if (parseInt(data.totalHits) < 40) {
       createPicsList(picture);
       lightBox.refresh();
+      showEndMessage()
       onFetchSuccess(data.totalHits);
       return;
     }
-    shownImages = data.hits.length;
+    shownPics = data.hits.length;
     createPicsList(picture);
     lightBox.refresh();
     addObserveOrshowEndMessage(data.totalHits);
@@ -61,7 +62,7 @@ async function loadMore() {
     createPicsList(picture);
     lightBox.refresh();
 
-    shownImages += data.hits.length;
+    shownPics += data.hits.length;
     addObserveOrshowEndMessage(data.totalHits);
 
   } catch (error) {
@@ -142,7 +143,7 @@ const infiniteObserver = new IntersectionObserver(
   );
 
   function addObserveOrshowEndMessage(totalHits) {
-    if (shownImages < totalHits) {
+    if (shownPics < totalHits) {
       addObserve();
     } else {
       showEndMessage();
