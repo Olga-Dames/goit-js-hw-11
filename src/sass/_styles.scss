@@ -1,0 +1,80 @@
+body {
+  background-color: rgb(221, 221, 221);
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 40px 25px;
+  background-color: rgb(231, 156, 58);
+}
+
+input[name="searchQuery"] {
+  width: 400px;
+  padding: 7px 15px;
+  outline: transparent;
+  border-radius: 30px;
+  border: none;
+}
+
+button {
+  display: block;
+  min-width: 85px;
+  padding: 7px 30px;
+  border-radius: 30px;
+  border: none;
+  transition: background-color 300ms linear;
+
+  &:hover,
+  &:focus {
+    background-color: lightgrey;
+  }
+}
+.gallery {
+  display: flex;
+  max-width: 1600px;
+  flex-wrap: wrap;
+  gap: 45px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.photo-card {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.img-link {
+  display: block;
+  text-decoration: none;
+}
+.gallery-img {
+  width: 350px;
+  height: 250px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-evenly;
+  color: darkblue;
+  font-size: 18px;
+  background-color: #fff;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  line-height: 1.5;
+}
+
+.load-more {
+  margin: 30px auto;
+}
+.is-hidden {
+  display: none;
+}
