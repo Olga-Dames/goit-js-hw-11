@@ -26,6 +26,11 @@ async function onSubmitSearch(e) {
     clearData();
     picture = data.hits;
 
+    if(PicsApi.searchWord === '') {
+      onEmptySearch()
+      return
+    }
+
     if (parseInt(data.totalHits) === 0) {
       onFetchFailure();
       return;
@@ -119,6 +124,10 @@ function onFetchFailure() {
 
 function onFetchSuccess(totalHits) {
   Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
+}
+
+function onEmptySearch() {
+  Notiflix.Notify.info('Oops, it seems that you searched for nothing) ');
 }
 
 const infiniteObserver = new IntersectionObserver(

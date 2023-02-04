@@ -24,8 +24,8 @@ input[name="searchQuery"] {
 
 .submit__btn{
   position: absolute;
-  top: 39px;
-  right: 345px;
+  top: 20px;
+  right: 39%;
   display: block;
   padding: 7px 30px;
   border-radius: 30px;
@@ -39,10 +39,11 @@ input[name="searchQuery"] {
   display: flex;
   max-width: 1600px;
   flex-wrap: wrap;
-  gap: 45px;
+  gap: 30px;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 30px;
 }
 
 .photo-card {
@@ -84,9 +85,6 @@ input[name="searchQuery"] {
 
 .load-more {
   margin: 30px auto;
-}
-.is-hidden {
-  display: none;
 }
 
 .end-search__info {
